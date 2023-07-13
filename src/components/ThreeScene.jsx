@@ -4,7 +4,7 @@ import { OrbitControls, Stars } from "@react-three/drei";
 
 const ThreeScene = ({ children }) => {
   return (
-    <Canvas camera={{ position: [3.5, 0, 0] }}>
+    <Canvas camera={{ position: [0, -1, 3] }}>
       <color
         attach="background"
         args={["#000a0b"]}
@@ -18,8 +18,11 @@ const ThreeScene = ({ children }) => {
       {children}
       <OrbitControls
         autoRotate={true}
-        autoRotateSpeed={1}
+        autoRotateSpeed={0.9}
         enableZoom={false}
+        enableDamping
+        dampingFactor={0.02}
+        target={[0, 0, 0]}
       />
     </Canvas>
   );
