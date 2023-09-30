@@ -1,6 +1,5 @@
 /* eslint-disable react/no-unknown-property */
-import React from "react";
-import { RoundedBox, useTexture } from "@react-three/drei";
+import { useTexture } from "@react-three/drei";
 import { CapsuleGeometry } from "three";
 import { RoundedBoxGeometry } from "https://threejsfundamentals.org/threejs/resources/threejs/r132/examples/jsm/geometries/RoundedBoxGeometry.js";
 

@@ -1,20 +1,41 @@
 /* eslint-disable react/no-unknown-property */
-import React from "react";
-import ThreeScene from "./ThreeScene";
+import { useMemo } from "react";
 import { OrbitControls, Stars, Stats } from "@react-three/drei";
 
-const Cube = ({ color, position }) => {
+import {
+  BoxGeometry,
+  LineSegments,
+  BufferGeometry,
+  Float32BufferAttribute,
+  LineDashedMaterial,
+} from "three";
+import { useThree } from "@react-three/fiber";
+// import { MeshLine, MeshLineMaterial, MeshLineRaycast } from "threejs-meshline";
+
+const Cube = ({ color, position, scale }) => {
   return (
     <>
-      <mesh position={position}>
-        <sphereGeometry args={[1, 100, 100]} />
-        <meshStandardMaterial color={color} />
-      </mesh>
-      {/* <ambientLight /> */}
+      <lineSegments
+        scale={scale}
+        position={(0, 0, 0)}
+        linewidth={0.1}
+      >
+        <edgesGeometry args={[new BoxGeometry(1, 1, 1, 1)]} />
+
+        <lineBasicMaterial
+          color={0xff3e3e}
+          linewidth={1}
+          linecap="round"
+          linejoin="round"
+        />
+      </lineSegments>
+
+      <ambientLight />
       <OrbitControls
         autoRotate={false}
         autoRotateSpeed={0.2}
       />
+      <ambientLight />
       <Stats />
     </>
   );

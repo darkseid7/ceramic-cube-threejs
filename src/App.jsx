@@ -13,29 +13,41 @@ import ThreeScene from "./components/ThreeScene";
 
 import RoundedBoxComponent from "./components/RoundedBox";
 
+import Fatline from "./components/CubeLine";
+
 function App() {
   return (
     <>
       <div style={{ height: "100vh" }}>
         <ThreeScene>
-          <RoundedBoxComponent />
+          <Fatline
+            count={8}
+            color={"orange"}
+          />
         </ThreeScene>
+        {/* 
+        <ThreeScene>
+          <Cube
+            color="orange"
+            scale={[2, 2, 2]}
+          />
+          <Cube
+            color="orange"
+            scale={[1.995, 1.995, 1.995]}
+          />
+          <Cube
+            color="orange"
+            scale={[1, 1, 1]}
+          />
+        </ThreeScene> */}
+
         {/* <ThreeScene>
-          <Icosahedron position={(0, 0, 0)} />
+          <RoundedBoxComponent /> 
+          
         </ThreeScene> */}
       </div>
       {/* <Canvas>
-        <ambientLight intensity={0.5} />
-        <spotLight
-          position={[10, 10, 10]}
-          angle={0.15}
-          penumbra={1}
-        />
-        <pointLight position={[-10, -10, -10]} />
-        <CameraControls position={[0, 0, -2]} />
-        <ThreeCube position={[-1.2, 0, 0]} />
-        <ThreeCube position={[1.2, 0, 0]} />
-        <ThreeCube position={[3.2, 0, 0]} />
+
       </Canvas> */}
     </>
   );
